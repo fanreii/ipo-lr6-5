@@ -8,31 +8,31 @@ import random
 # генерация списка случайных чисел диапазона -50 50 размером 25
 numbs = [random.randint(-50,50) for l in range(25)]
 # инициализация счетчика 
-positives = 0
-negatives = 0
-zero = 0
+positives = 0 # для положительных значений
+negatives = 0 # для отрицательных значений 
+zero = 0 # для нулей
 # подсчет количества положительных, отрицательных и нулей
-for number in numbs:
-    if number > 0:
-        positives += 1
-    elif number < 0:
-        negatives += 1
-    else:
-        zero += 1
+for number in numbs: # цикл, проходящий по массиву чисел numbs
+    if number > 0: # если верно условие положительного числа (>0)
+        positives += 1 # увеличение счетчика положительных чисел на 1
+    elif number < 0: # если верно условие отрицательного числа (<0)
+        negatives += 1 # # увеличение счетчика отрицательных чисел на 1
+    else: # если указанные выше условия не верны
+        zero += 1 # увеличение счетчика нулей на 1
 # рассчет процентов
-total_count = len(numbs)
-positives_percentage = (positives / total_count) * 100
-negatives_percentage = (negatives / total_count) * 100
-zero_percentage = (zero / total_count) * 100
+total_count = len(numbs) # нахождение количества всех чисел
+positives_percentage = (positives / total_count) * 100 # рассчет процента положительных чисел
+negatives_percentage = (negatives / total_count) * 100 # рассчет процента отрицательных чисел
+zero_percentage = (zero / total_count) * 100 # рассчет процента нулей
 # нахождение наибольшего и наименьшего значения
-max_val = max(numbs)
-min_val = min(numbs)
+max_val = max(numbs) # максимальное значение с использованием встроенной функции max
+min_val = min(numbs) # минимальное значение с использованием встроенной функции min
 # вывод результатов
-print("Список чисел")
-print(numbs)
-print("\nРезультаты: ")
-print(f"Положительные числа: {positives} ({positives_percentage}%)")
-print(f"Отрицательные числа: {negatives} ({negatives_percentage}%)")
-print(f"Нули: {zero} ({zero_percentage}%)")
-print(f"\nСамое большое значение: {max_val}")
-print(f"Самое маленькое значение: {min_val}")
+print("Список чисел") # вывод строки
+print(numbs) # вывод начального массива
+print("\nРезультаты: ") # вывод строки с нового абзаца
+print(f"Положительные числа: {positives} ({positives_percentage}%)") # вывод положительных чисел и их процента
+print(f"Отрицательные числа: {negatives} ({negatives_percentage}%)") # вывод отрицательных чисел и их процента
+print(f"Нули: {zero} ({zero_percentage}%)") # вывод нулей и их процента
+print(f"\nСамое большое значение: {max_val}") # вывод максимального значения
+print(f"Самое маленькое значение: {min_val}") # вывод минимального значения
